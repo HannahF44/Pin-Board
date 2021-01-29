@@ -49,6 +49,20 @@ function appendData(data) {
 
     const tagButtons = data[i].tags.map( (tag) => {
       const tagButton = document.createElement("button");
+      tagButton.onclick = () => {
+        const filteredCards = cards.filter((card) => {
+          return (
+            card.tags.find((tag) => {
+              return tag.includes(tagButton.innerHTML);
+            }) !== undefined
+          );
+        });
+        appendData(filteredCards);
+      }
+
+
+
+
       tagButton.innerHTML = tag;
       return tagButton;
     });

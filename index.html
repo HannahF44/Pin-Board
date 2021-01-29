@@ -21,6 +21,37 @@
      <button class="newCardButton">Add a card</button>
     </div>
   <div class="cardContainer" id="cardContainer"></div>
+
+  <div id="newCardModal" class="modal">
+    <div class="modal-content">
+      <!-- the X-button can ve achieved by using the "&times;" entity -->
+
+      <span class="close">&times;</span>
+    <form>
+       <label for="imgSrc">Image source</label>
+      <input 
+        type="text"
+        id="imgsrc"
+        name="source"
+        class="newCardInput"
+        placeholder="Paste your image url here"
+      />
+      <label for="tags">Tags</label>
+      <input 
+        type="text"
+        id="tags"
+        name="tags"
+        class="newCardInput"
+        placeholder="Separate tags with a semiolon ( ; )"
+      />
+
+
+      <button type="button" class="submitButton" onClick="saveNewCard()">Submit
+        </button>
+    </form>
+  </div>
+</div>
+
       <img />
       <div class="tagContainer">
         <button class="tagButton">tagButton</button>
