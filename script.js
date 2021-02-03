@@ -80,7 +80,7 @@ newCardButton.onclick = function () {
   newCardModal.style.display = "block";
 };
 
-var closeModal = document.getElementByClassName("close")[0];
+var closeModal = document.getElementsByClassName("close")[0];
 closeModal.onclick = function() {
   newCardModal.style.display = "none";
 };
@@ -90,3 +90,22 @@ window.onclick = function (event) {
     newCardModal.style.display = "none";
   }
 };
+
+function saveNewCard() {
+  var newImgSrc = document.getElementById("imgsrc").value;
+
+  var newTags = document.getElementById("tags").value.split(";");
+
+  var lastCardId = cards[cards.length - 1].id;
+
+  var newCard = {
+    id: lastCatdId + 1,
+    src: newImgSrc,
+    tags: newTags,
+  };
+
+  cards = [...cards, newCard];
+  appendData(cards);
+
+  newCardModal.style.display = "none";
+}

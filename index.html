@@ -16,9 +16,13 @@
 	<h1 class="header">My Pinboard</h1>
 	<div class="searchContainer">
 		<label class="searchLabel">search</label>
-     <input class="searchInput" />
+     <input
+      type="text"
+      id="searchInput"
+      oninput="filterTags()"
+     />
      <p class= "searchResult"></p>
-     <button class="newCardButton">Add a card</button>
+     <button id="newCardButton" class="newCardButton">Add a card</button>
     </div>
   <div class="cardContainer" id="cardContainer"></div>
 
